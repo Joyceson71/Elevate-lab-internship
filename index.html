@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Landing Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #00796b;
+      color: white;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      align-items: center;
+      padding: 3rem 2rem;
+      gap: 2rem;
+      flex: 1;
+    }
+
+    .hero-text {
+      max-width: 600px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      color: #004d40;
+    }
+
+    .hero-text p {
+      margin: 1rem 0;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .hero-text button {
+      padding: 0.7rem 1.5rem;
+      background-color: #00796b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .hero-image {
+      text-align: center;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    footer {
+      background-color: #004d40;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
+    /* Mobile Navigation Toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: #00796b;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 150px;
+        padding: 1rem;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Web Site</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <nav id="nav">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Welcome to My Website</h1>
+      <p>Discover our amazing services and products that will make your life easier and more enjoyable. Join us today and experience the change!</p>
+      <button>Get Started</button>
+    </div>
+    <div class="hero-image">
+      <img src="https://via.placeholder.com/400x300" alt="Hero Image">
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 MySite. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("nav");
+      nav.classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>
